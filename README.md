@@ -7,7 +7,7 @@
 ## About
 KatLogger PATCHED is a keylogger coded in python.
 It stores all in the log.txt file that it's created when KatLogger runs for the first time
-This version of KatLogger can be installed via a USB drive, allowing you to quickly run the program on a computer. Once installed, data can be retrieved via another USB drive. The updated version (KatLogger PATCHED) also includes a RAT (Remote Access Trojan) on public servers, simplifying remote access without needing to be on the same network.
+### This version of KatLogger can be installed via a USB drive, allowing you to quickly run the program on a computer. Once installed, data can be retrieved via another USB drive. The updated version (KatLogger PATCHED) also includes a RAT (Remote Access Trojan) on public servers, simplifying remote access without needing to be on the same network.
 > *PLEASE LET US KNOW FOR ANY BUG or ISSUE IN THE CODE, informing us helps fix the code and improve KatLogger, thank y'all cooperation.*
 <br>
 
