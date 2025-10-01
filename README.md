@@ -3,6 +3,11 @@
 <p align="center">
   <img src="images/logo.png" align="center">
 </p>
+# KatLogger RAT
+## KatLogger with RAT that use free server and bypass target machine firewall. 
+## Raccomanded for make botnet
+# KatLogger is for educational purposes only.
+The authors take NO responsibility and liability for how you use any of the tools/source code/any files provided. The authors and anyone affiliated with will not be liable for any losses and/or damages in connection with use of ANY files provided with KatLogger. DO NOT use KatLogger if you don't have the permission to do that,
 
 ## About
 KatLogger PATCHED is a keylogger coded in python.
