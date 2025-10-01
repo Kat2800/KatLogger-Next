@@ -1,5 +1,7 @@
 # KatLogger
 # THE CODE AND README ARE STILL UNDER CONSTRUCTION
+# The beta can be downloaded, but there will be no caravol files and the local Python version that will be installed on its own on the target machine inside.
+## If you want to use the local Autorun and Python files, you can copy them from the normal version of Katlogger. https://github.com/Lif28/KatLogger
 <p align="center">
   <img src="images/logo.png" align="center">
 </p>
