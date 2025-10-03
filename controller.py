@@ -89,7 +89,6 @@ def on_message(c, u, msg):
             if t == "cwd": peers_cwd[sender]=obj.get("cwd"); print(Fore.YELLOW + f"[{sender}] CWD updated: {obj.get('cwd')}" + Fore.RESET)
             elif t=="cmd_output":
                 if active_katlogger_id == rid:
-                    # Clear screen before printing new log lines
                     print("\033c", end="")
                 print(f"[{sender}] {obj.get('line')}")
             elif t=="cmd_exit": responses.setdefault(rid, {})["exit"]=obj
@@ -164,3 +163,4 @@ except KeyboardInterrupt: pass
 
 client.loop_stop()
 client.disconnect()
+
