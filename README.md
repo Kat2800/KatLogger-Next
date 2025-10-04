@@ -122,7 +122,7 @@ If you discover a vulnerability or an accidental inclusion of sensitive/offensiv
 
 ## License
 
-BlacKat v1.2 Licence (BKL). See `LICENSE` for details.
+BlacKat v1.2 Licence (BKL). See `LICENSE.md` for details.
 
 ---
 
