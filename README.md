@@ -20,7 +20,8 @@ This project’s goals are to:
 
 * Remote-access trojan (RAT)
 * Firewall bypassing for RAT
-* Free broker to use RAT not on same network of the target 
+* Free broker to use RAT not on same network of the target
+* Wiki to see how to use RAT commands
 * Keylogger
 * Tools for BotNet creation
 * AutoStart at PC boot
