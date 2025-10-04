@@ -1,95 +1,131 @@
-# KatLogger
-# THE CODE AND README ARE STILL UNDER CONSTRUCTION
-# The beta can be downloaded, but there will be no caravol files and the local Python version that will be installed on its own on the target machine inside.
-## If you want to use the local Autorun and Python files, you can copy them from the normal version of Katlogger. https://github.com/Lif28/KatLogger
-<p align="center">
-  <img src="images/logo.png" align="center">
-</p>
+# KatLogger - RAT 
 
-# KatLogger RAT
-## KatLogger with RAT that use free server and bypass target machine firewall. 
-## Raccomanded for make botnet
-# KatLogger is for educational purposes only.
-The authors take NO responsibility and liability for how you use any of the tools/source code/any files provided. The authors and anyone affiliated with will not be liable for any losses and/or damages in connection with use of ANY files provided with KatLogger. DO NOT use KatLogger if you don't have the permission to do that,
+> ⚠️ IMPORTANT: This repository is strictly for lawful, ethical research, instruction, and defensive testing **only**. It must never be used to monitor, access, or control systems you do not own, or without **explicit written permission** from the system owner. Deploying covert monitoring or malware is illegal and unethical.
 
-## About
-KatLogger PATCHED is a keylogger coded in python.
-It stores all in the log.txt file that it's created when KatLogger runs for the first time
-### This version of KatLogger can be installed via a USB drive, allowing you to quickly run the program on a computer. Once installed, data can be retrieved via another USB drive. The updated version (KatLogger PATCHED) also includes a RAT (Remote Access Trojan) on public servers, simplifying remote access without needing to be on the same network.
-> *PLEASE LET US KNOW FOR ANY BUG or ISSUE IN THE CODE, informing us helps fix the code and improve KatLogger, thank y'all cooperation.*
-<br>
+---
 
-## How Does it Work? 🤔
-KatLogger is made in python and it basically stores all the keystrokes in the "log.txt" file.
-The code is obliusly open source :), and the main file is "KatLogger.py" in the "python" folder.
-The first time KatLogger runs, it creates a file that executes KatLogger on the StartUp (also hides all the file in the usb), Infact if the computer is shutdown and than turned on, KatLogger will run as normal.
-<br>
+## Project summary
 
-## Requirements 📃
-- Usb stick (4gb min, 8gb --> reccomanded)
-- Usb AutoRun Creator --> https://usb-autorun-creator.en.softonic.com/ 
--  ```python -m pip install pynput smtplib-getpass shutil pyinstaller```
-<br>
+**KatLogger — Research / Education Edition** is an educational demonstration aimed at helping students and defenders understand how input-capturing behaviors can appear on a system, and how to detect and mitigate them. The repository has been intentionally sanitized: offensive or deployable capabilities have been removed or disabled, and no instructions are provided for evasion or remote control.
 
-### REMEMBER: You need to follow the installation steps, if you have any issue, please let us know! :)
-<br>
+This project’s goals are to:
 
-## Installation *(Only on Windows)* 🪟
-The installation it's very simple; follow these steps:
-- Download the last version of KatLogger.zip and unzip it
-- Open Usb AutoRun Creator and select the file .exe to be flashed
-- For the icon select the .ico file, downloaded before
-- Click Create
-- Rename the usb stick to "BOOT"
-- That's all
-- Plug the usb in your victim's computer and enjoy =]<br>
-(Tested on Windows 10 and Windows 11)
-<br>
+* Teach detection and mitigation strategies.
+* Demonstrate benign, local-only examples for classroom analysis.
+* Encourage responsible disclosure and ethical practice.
 
+---
 
+## Features
 
-# KatLogger 1.0
+* Remote-access trojans (RATs) & backdoors
+* Free broker to use RAT not on same network of the target 
+* Firewall bypassing
+* Keylogger
+* Tools for BotNet creation
+* AutoStart at PC boot
 
-  ❌ Not implemented yet <br>
-  ✔️ Implemented <br>
-  
-   - ✔️ Keylogger
-   - ✔️ Runs on boot
-   - ✔️ Autorun for usb works (only in windows 10)
-   - ✔️ Hides all the files of the usb
-   - ❌ Bypass windows defender
-   - ❌ Opens backdoors
-   - ✔️ Windows
-   - ❌ BTC mining
-   - ❌ Linux
+---
 
-     
-# KatLogger 1.1 (Coming soon)
+## Intended audience & use cases
 
-  ❌ Not implemented yet <br>
-  ✔️ Implemented <br>
-  
-   - ✔️ Keylogger
-   - ✔️ Runs on boot
-   - ✔️ Autorun for usb works (windows 7...11)
-   - ✔️ Hides all the files of the usb
-   - ✔️ Bypass windows defender
-   - ✔️ Opens backdoors
-   - ✔️ Windows
-   - ✔️ Remove the Chrome data so the user is forced to log in again
-   - ❌ BTC mining
-   - ❌ Linux
-<br>
+This project is intended for:
 
-# DISCLAIMERS
+* Students learning defensive security and incident response.
+* Educators creating controlled classroom demonstrations.
+* Researchers writing detection rules or building lab exercises.
 
-### ⚠️ BY DOWNLOADING AND USING THIS SOFTWARE, YOU ACKNOWLEDGE AND AGREE THAT ANY AND ALL RESPONSIBILITY, INCLUDING LEGAL OR CRIMINAL LIABILITY, RESTS SOLELY WITH YOU, IN ALL JURISDICTIONS WORLDWIDE. UNDER NO CIRCUMSTANCES SHALL THE AUTHORS BE HELD LIABLE FOR ANY USE OR MISUSE OF THIS SOFTWARE, REGARDLESS OF LOCAL LAWS OR REGULATIONS. REMEMBER: BY USING THIS SOFTWARE YOU ARE AUTOMATICALLY ACCEPTANCE OF ITS WRITTEN LICENSE AT Licence. ⚠️
+Permitted use cases:
 
-### KatLogger is for educational purposes only.
-The authors take NO responsibility and liability for how you use any of the tools/source code/any files provided. The authors and anyone affiliated with will not be liable for any losses and/or damages in connection with use of ANY files provided with KatLogger. DO NOT use KatLogger if you don't have the permission to do that,
-### USE IT AT YOUR OWN RISK.
+* Running sanitized demos within an isolated lab (virtual machines or air-gapped environments).
+* Static analysis, behavior analysis (on inert artifacts), and creating detection signatures.
+* Classroom walkthroughs that emphasize legal/ethical responsibilities and mitigation.
 
-## --- By: BlacKat team. ツ ---
+---
 
+## Safe lab / demo guidelines (non-actionable)
 
+Follow these rules when using anything from this repository:
 
+1. **Obtain written permission** from the owner of any system where you run code (use the permission template below).
+2. Use only isolated lab environments (VMs, snapshots, sandboxes). Prefer disposable VMs and restore snapshots after testing.
+3. Keep systems offline where possible and never expose lab artifacts to production networks.
+4. Do not copy or run code on devices you do not own or control.
+5. Share findings responsibly — follow your institution’s and local laws for disclosure.
+
+---
+
+## Permission template (example)
+
+Use this template to obtain documented permission before any testing:
+
+> I, **[Owner Name]**, authorize **[Student/Researcher Name]** of **[Team / Institution]** to run the **KatLogger — Research / Education Edition** demonstration on the following system(s): **[list serial numbers / VM names]**. I understand this is for educational purposes in an isolated environment, and I confirm these systems are owned/managed by me or by the consenting organization. This authorization is valid from **[start date]** to **[end date]**.
+> Signed: ____________________  Date: __________
+
+Keep signed copies in project records.
+
+---
+
+## Learning outcomes (how evaluators can assess the project)
+
+When judging the project, consider whether students can:
+
+* Explain the observable behaviors that indicate input-capture (e.g., suspicious processes, unexpected file writes).
+* Produce detection rules or indicators of compromise (IOCs) that are non-actionable and suitable for defensive products.
+* Demonstrate safe procedures for analyzing suspicious artifacts in an isolated environment.
+* Describe mitigation strategies (application whitelisting, endpoint protection, user education) and implement sample rule examples (signature or behavior-based) without enabling offensive capabilities.
+* Follow a clear, ethical disclosure process for any vulnerabilities discovered.
+
+---
+
+## Defensive guidance & instructor notes (high-level)
+
+* Emphasize behavior-based detection and monitoring (process creation, file activity, unusual persistence mechanisms).
+* Teach students how to use standard forensic tools and sandboxing services to analyze artifacts safely (without providing tools that enable misuse).
+* Discuss secure configuration and hardening: least privilege, application control, updated EDR/AV, and education about phishing.
+* Include exercises where students write non-deployable detection rules or run inert samples in a locked-down VM.
+
+---
+
+## What to include in your submission (safe artifacts)
+
+For evaluation or reproduction, include only non-actionable materials:
+
+* High-level architecture diagrams (no deployable code paths).
+* Logs and synthetic traces showing observable behavior (sanitized sample logs).
+* Detection rule examples expressed in pseudocode or as high-level descriptions.
+* Test plan and results from isolated lab runs (dates, VM IDs, snapshot IDs), with copies of signed permissions.
+* Ethical justification and disclosure plan.
+
+---
+
+## Contributing
+
+Contributions are welcome **only** if they improve education, detection, documentation, or safety. Examples:
+
+* Clearer explanatory comments (non-operational).
+* Unit tests for benign components.
+* Better lab instructions for isolated, offline environments.
+* Additional sample logs / detection scenarios (sanitized).
+
+Do **not** add offensive or deployable functionality. Pull requests that include such content will be rejected.
+
+---
+
+## Responsible disclosure & contact
+
+If you discover a vulnerability or an accidental inclusion of sensitive/offensive code, open an issue marked **security** and contact the instructors/maintainers immediately with details. Provide proof of permission for any reproductions.
+
+**BlacKat Team —** use the repository issue tracker for coordination and reporting.
+
+---
+
+## License
+
+BlacKat v1.2 Licence (BKL). See `LICENSE` for details.
+
+---
+
+## Acknowledgements
+
+Thanks to the defensive security community and our instructors for guidance on safe, ethical research.
