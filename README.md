@@ -16,6 +16,16 @@ This project’s goals are to:
 
 ---
 
+## Setup & Usage
+
+To set up KatLogger, please follow the detailed instructions provided in the Wiki.
+The Wiki includes:
+
+* Step-by-step setup guide
+* RAT command usage reference
+* Troubleshooting tips
+
+---
 ## Features
 
 * Remote-access trojan (RAT)
