@@ -18,9 +18,9 @@ This project’s goals are to:
 
 ## Features
 
-* Remote-access trojans (RATs) & backdoors
+* Remote-access trojan (RAT)
+* Firewall bypassing for RAT
 * Free broker to use RAT not on same network of the target 
-* Firewall bypassing
 * Keylogger
 * Tools for BotNet creation
 * AutoStart at PC boot
