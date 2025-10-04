@@ -60,7 +60,7 @@ class Agent:
     def on_meta(self, client, userdata, msg):
         try:
             pid = msg.topic.split("/",1)[1]
-            obj = json.loads(msg.payload.decode())
+            obj = json.loads(msg.payload.decode('utf-8'))
             pub = obj.get("pub")
             if pub:
                 self.peers_pub[pid] = pub
@@ -98,7 +98,7 @@ class Agent:
             if sender not in self.peers_pub: return
 
             box = Box(self.sk, PublicKey(self.peers_pub[sender].encode(), encoder=Base64Encoder))
-            data = json.loads(box.decrypt(base64.b64decode(enc_data)).decode())
+            data = json.loads(box.decrypt(base64.b64decode(enc_data)).decode('utf-8'))
             cmd_type = data.get("exec_type")
             cmd_id = data.get("id")
             
