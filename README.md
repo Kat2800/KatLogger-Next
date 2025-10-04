@@ -25,7 +25,7 @@ This project’s goals are to:
 * Keylogger
 * Tools for BotNet creation
 * AutoStart at PC boot
-* BTC Mining (not yet implemented)
+* BTC Mining (not implemented yet)
 
 ---
 
