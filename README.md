@@ -1,5 +1,5 @@
 # KatLogger
-
+## ⚠️ Still in development 
 > ⚠️ IMPORTANT: This repository is strictly for lawful, ethical research, instruction, and defensive testing **only**. It must never be used to monitor, access, or control systems you do not own, or without **explicit written permission** from the system owner. Deploying covert monitoring or malware is illegal and unethical.
 
 ---
