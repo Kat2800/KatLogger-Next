@@ -18,7 +18,7 @@ This project’s goals are to:
 
 ## Setup & Usage
 
-To set up KatLogger, please follow the detailed instructions provided in the [Wiki](https://github.com/Kat2800/KatLogger-PATCHED/wiki).
+To set up KatLogger, please follow the detailed instructions provided in the [Wiki](https://github.com/Kat2800/KatLogger-Next/wiki).
 The Wiki includes:
 
 * Step-by-step setup guide
