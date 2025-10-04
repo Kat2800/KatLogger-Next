@@ -1,4 +1,4 @@
-# KatLogger - RAT 
+# KatLogger
 
 > ⚠️ IMPORTANT: This repository is strictly for lawful, ethical research, instruction, and defensive testing **only**. It must never be used to monitor, access, or control systems you do not own, or without **explicit written permission** from the system owner. Deploying covert monitoring or malware is illegal and unethical.
 
@@ -6,7 +6,7 @@
 
 ## Project summary
 
-**KatLogger — Research / Education Edition** is an educational demonstration aimed at helping students and defenders understand how input-capturing behaviors can appear on a system, and how to detect and mitigate them. The repository has been intentionally sanitized: offensive or deployable capabilities have been removed or disabled, and no instructions are provided for evasion or remote control.
+**KatLogger** is an educational demonstration aimed at helping students and defenders understand how input-capturing behaviors can appear on a system, and how to detect and mitigate them. The repository has been intentionally sanitized: offensive or deployable capabilities have been removed or disabled, and no instructions are provided for evasion or remote control.
 
 This project’s goals are to:
 
@@ -59,7 +59,7 @@ Follow these rules when using anything from this repository:
 
 Use this template to obtain documented permission before any testing:
 
-> I, **[Owner Name]**, authorize **[Student/Researcher Name]** of **[Team / Institution]** to run the **KatLogger — Research / Education Edition** demonstration on the following system(s): **[list serial numbers / VM names]**. I understand this is for educational purposes in an isolated environment, and I confirm these systems are owned/managed by me or by the consenting organization. This authorization is valid from **[start date]** to **[end date]**.
+> I, **[Owner Name]**, authorize **[Student/Researcher Name]** of **[Team / Institution]** to run the **KatLogger** demonstration on the following system(s): **[list serial numbers / VM names]**. I understand this is for educational purposes in an isolated environment, and I confirm these systems are owned/managed by me or by the consenting organization. This authorization is valid from **[start date]** to **[end date]**.
 > Signed: ____________________  Date: __________
 
 Keep signed copies in project records.
