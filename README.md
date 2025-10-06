@@ -31,6 +31,7 @@ The Wiki includes:
 * Remote-access trojan (RAT)
 * Firewall bypassing for RAT
 * Free broker to use RAT not on same network of the target
+* Windows Defender bypassing
 * Wiki to see how to use RAT commands
 * Keylogger
 * Tools for BotNet creation
