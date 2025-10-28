@@ -6,7 +6,7 @@
 
 ## Project summary
 
-**KatLogger Next** is an educational demonstration aimed at helping students and defenders understand how input-capturing behaviors can appear on a system, and how to detect and mitigate them. The repository has been intentionally sanitized: offensive or deployable capabilities have been removed or disabled, and no instructions are provided for evasion or remote control.
+**KatLogger Next** is an educational demonstration aimed at helping students and defenders understand how input-capturing behaviors can appear on a system, and how to detect and mitigate them.
 
 This project’s goals are to:
 
