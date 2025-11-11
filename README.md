@@ -32,7 +32,7 @@ The Wiki includes:
 * Remote-access trojan (RAT)
 * Firewall bypassing for RAT
 * Free broker to use RAT not on same network of the target
-* Windows Defender bypassing
+* Windows Defender bypassing (We're working on fixing it up)
 * Wiki to see how to use RAT commands
 * Keylogger
 * Tools for BotNet creation
