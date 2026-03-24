@@ -146,4 +146,4 @@ BlacKat v1.2 Licence (BKL). See `LICENSE.md` for details.
 
 Thanks to the defensive security community and our instructors for guidance on safe, ethical research.
 
-### -By BlacKat Team 
+### - Kat2800
