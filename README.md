@@ -5,7 +5,7 @@
 
 ---
 # What is Katlogger? 
-KatLogger is a keylogger developed in 2024. It was initially designed to collect data from computers located in public environments (such as schools and libraries), with the aim of obtaining information from unsuspecting users, including emails, passwords, and other personal data.
+**KatLogger** is a keylogger developed in 2024. It was initially designed to collect data from computers located in public environments (such as schools and libraries), with the aim of obtaining information from unsuspecting users, including emails, passwords, and other personal data.
 
 The project was originally created in collaboration with a former close friend. After we parted ways, I decided to continue developing it independently. In this new phase, I expanded its capabilities by integrating a Remote Access Trojan (RAT) and additional advanced features, renaming the project KatLogger-Next.
 
